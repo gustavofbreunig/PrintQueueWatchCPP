@@ -14,7 +14,13 @@ Dependencies:
 * Windows API
 
 Supported Compilers:
-* GCC (but every windows C++ compiler should work)
+* GCC (but every C++11 compiler should work)
 
-How to use it:
-TODO
+How to use it: 
+Just add source files (.cpp and .h) to your project and build, use as in main.cpp
+For a functional example:
+```
+make
+```
+
+Execute the .exe, then print something.
