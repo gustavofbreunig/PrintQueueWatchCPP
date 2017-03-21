@@ -17,7 +17,7 @@ Dependencies:
 * Windows API
 
 Supported Compilers:
-* GCC (but every C++11 compiler should work)
+* GCC for windows (mingw-w64: https://mingw-w64.org) (but every C++11 compiler should work)
 
 How to use it: 
 Just add source files (.cpp and .h) to your project and build, use as in main.cpp
