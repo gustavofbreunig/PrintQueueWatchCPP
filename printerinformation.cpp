@@ -1,11 +1,12 @@
 #include "printerinformation.h"
 
 void PrinterInformation::SetMonitored(bool value)
-{  
+{
     if (value)
     {
         if (_NotificationThread == NULL)
         {
+			_Cancelled = false;
             //create the eventqueue
             EventQueue = new PrinterEventQueue(JobEvent);
             //create the eventqueue consumer thread
@@ -18,14 +19,18 @@ void PrinterInformation::SetMonitored(bool value)
     }
     else
     {
-        if (_NotificationThread != NULL)
+        if (!_Cancelled)
         {
-            _Cancelled = true;
+			_Cancelled = true;
             //Stop monitoring the printer
             if (!FindClosePrinterChangeNotification(_NotificationThread->mhWait))
             {
                 std::string err("FindClosePrinterChangeNotification() failed: error ");
                 err += std::to_string(GetLastError());
+				err += " on printer ";
+				char printerName[wcslen(mPrinter_Info_2->pPrinterName) + 1];
+				wcstombs(printerName, mPrinter_Info_2->pPrinterName, wcslen(mPrinter_Info_2->pPrinterName));
+				err += printerName;
                 throw std::runtime_error(err.c_str());
             }
 
@@ -117,7 +122,6 @@ bool PrinterInformation::IsNetworkPrinter()
 
 PrinterInformation::~PrinterInformation()
 {
-    this->SetMonitored(false);
     ClosePrinter(mhPrinter);
     free(mPrinter_Info_2);
 }

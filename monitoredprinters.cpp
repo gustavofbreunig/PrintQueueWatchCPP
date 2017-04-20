@@ -18,6 +18,6 @@ void MonitoredPrinters::Remove(std::wstring DeviceName)
     std::map<std::wstring, PrinterInformation*>::iterator it;
     it = _PrinterList.find(DeviceName);
     it->second->SetMonitored(false);
-    delete it->second;
+	delete it->second;
     _PrinterList.erase(it);
 }
