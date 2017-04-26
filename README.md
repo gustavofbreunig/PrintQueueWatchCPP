@@ -1,7 +1,7 @@
 # PrintQueueWatchCPP
 
 
-TODO: Makefile
+TODO: a gif.
 
 This project is based on PrintQueueWatch (https://printqueuewatch.codeplex.com) made by Duncan Jones (http://www.merrioncomputing.com/)
 for printer monitoring, it can log every print job in Windows printers.
@@ -10,11 +10,10 @@ The original project was written in VB.NET, but for compatibilty purposes, I nee
 the basic functionality in C++.
 
 Compatible OS:
-* Windows XP or later
+* Windows XP/Vista/Seven/10
 
 Dependencies:
 * POSIX Threads
-* Windows API
 
 Supported Compilers:
 * GCC for windows (mingw-w64: https://mingw-w64.org) (but every C++11 compiler should work)
