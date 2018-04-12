@@ -18,11 +18,11 @@ EXECUTABLE=queuewatch.exe
 all: $(SOURCES) $(EXECUTABLE)
 
 $(EXECUTABLE): $(OBJECTS) 
-    $(CC) $(OBJECTS) -o $@ $(LDFLAGS)
+	$(CC) $(OBJECTS) -o $@ $(LDFLAGS)
 	
 .cpp.o:
-    $(CC) $(CFLAGS) $< -o $@
+	$(CC) $(CFLAGS) $< -o $@
 
 clean: 
-	del *.o
-	del $(EXECUTABLE)
+	rm *.o
+	rm $(EXECUTABLE)
