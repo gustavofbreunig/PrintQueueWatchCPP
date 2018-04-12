@@ -1,7 +1,7 @@
 # PrintQueueWatchCPP
 
+![demo](https://raw.githubusercontent.com/gustavofbreunig/PrintQueueWatchCPP/master/demo.gif "Demo")
 
-TODO: a gif.
 
 This project is based on PrintQueueWatch (https://printqueuewatch.codeplex.com) made by Duncan Jones (http://www.merrioncomputing.com/)
 for printer monitoring, it can log every print job in Windows printers.
